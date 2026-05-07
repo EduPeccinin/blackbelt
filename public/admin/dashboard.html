@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dashboard - Academia Black Belt</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo-dark.png">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <button class="mobile-menu-btn" id="sidebarToggle">☰</button>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <img src="/assets/images/logo-dark.png" alt="Black Belt">
+                <span>BLACK BELT</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="sidebar-link active"><span class="icon">📊</span> Dashboard</button>
+                <a href="/" class="sidebar-link"><span class="icon">🌐</span> Ver Site</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn" id="logoutBtn"><span class="icon">🚪</span> Sair</button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="top-bar">
+                <h2>📋 Agendamentos</h2>
+                <span class="date" id="currentDate"></span>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card"><div class="stat-icon">📅</div><div class="stat-value" id="statToday">0</div><div class="stat-label">Hoje</div></div>
+                <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-value" id="statPending">0</div><div class="stat-label">Pendentes</div></div>
+                <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-value" id="statCompleted">0</div><div class="stat-label">Concluídas</div></div>
+                <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-value" id="statTotal">0</div><div class="stat-label">Total</div></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <select class="filter-select" id="filterStatus">
+                    <option value="all">Todos os Status</option>
+                    <option value="pending" selected>Pendentes</option>
+                    <option value="confirmed">Confirmados</option>
+                    <option value="completed">Concluídos</option>
+                    <option value="rescheduled">Remarcados</option>
+                    <option value="cancelled">Cancelados</option>
+                </select>
+                <select class="filter-select" id="filterCategory">
+                    <option value="all">Todas Categorias</option>
+                    <option value="kids">Kids</option>
+                    <option value="infantil">Infantil</option>
+                    <option value="adulto">Adulto</option>
+                </select>
+                <input type="date" class="filter-select" id="filterDate">
+                <button class="filter-btn" id="applyFilters">Filtrar</button>
+                <button class="refresh-btn" id="refreshBtn" title="Atualizar">🔄</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>WhatsApp</th>
+                            <th>Idade</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedulesBody"></tbody>
+                </table>
+                <div class="empty-state" id="emptyState" style="display:none;">
+                    <div class="icon">📭</div>
+                    <p>Nenhum agendamento encontrado.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Reschedule Modal -->
+    <div class="modal-overlay" id="rescheduleModal">
+        <div class="modal">
+            <h3>📅 Remarcar Agendamento</h3>
+            <input type="hidden" id="rescheduleId">
+            <div class="form-group">
+                <label>Nova Data</label>
+                <input type="date" id="newDate">
+            </div>
+            <div class="form-group">
+                <label>Novo Horário</label>
+                <select id="newSchedule">
+                    <option value="Seg/Qua 18h30-19h20">Seg/Qua 18h30-19h20</option>
+                    <option value="Seg/Qua 19h20-20h10">Seg/Qua 19h20-20h10</option>
+                    <option value="Seg/Qua 07h30-08h20">Seg/Qua 07h30-08h20</option>
+                    <option value="Seg/Qua 20h10-21h00">Seg/Qua 20h10-21h00</option>
+                    <option value="Ter/Qui 17h00-17h50">Ter/Qui 17h00-17h50</option>
+                    <option value="Ter/Qui 18h30-19h20">Ter/Qui 18h30-19h20</option>
+                    <option value="Ter/Qui 19h20-20h10">Ter/Qui 19h20-20h10</option>
+                    <option value="Ter/Qui 20h10-21h00">Ter/Qui 20h10-21h00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Observações</label>
+                <textarea id="rescheduleNotes" placeholder="Motivo da remarcação..."></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn secondary" id="cancelReschedule">Cancelar</button>
+                <button class="modal-btn primary" id="confirmReschedule">Remarcar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Confirm Modal -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal">
+            <h3 id="confirmModalTitle">Confirmar Ação</h3>
+            <div class="form-group">
+                <p id="confirmModalText" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 8px;">Tem certeza que deseja realizar esta ação?</p>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn secondary" id="cancelConfirmBtn">Cancelar</button>
+                <button class="modal-btn primary" id="acceptConfirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

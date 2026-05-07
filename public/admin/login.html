@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin - Academia Black Belt</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo-dark.png">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="/assets/images/logo-dark.png" alt="Black Belt">
+                <h1>Painel Administrativo</h1>
+                <p>Academia Black Belt - Ibaté</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" placeholder="admin" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="login-btn" id="loginBtn">Entrar</button>
+                <p class="login-error" id="loginError"></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Check if already logged in
+        fetch('/api/admin/check').then(r => { if (r.ok) window.location.href = '/admin/dashboard'; });
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('loginBtn');
+            const errorEl = document.getElementById('loginError');
+            btn.disabled = true;
+            btn.textContent = 'Entrando...';
+            errorEl.classList.remove('show');
+
+            try {
+                const res = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: document.getElementById('username').value,
+                        password: document.getElementById('password').value
+                    })
+                });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    window.location.href = '/admin/dashboard';
+                } else {
+                    errorEl.textContent = data.error || 'Erro ao fazer login.';
+                    errorEl.classList.add('show');
+                    btn.disabled = false;
+                    btn.textContent = 'Entrar';
+                }
+            } catch (err) {
+                errorEl.textContent = 'Erro de conexão.';
+                errorEl.classList.add('show');
+                btn.disabled = false;
+                btn.textContent = 'Entrar';
+            }
+        });
+    </script>
+</body>
+</html>

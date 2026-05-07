@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academia Black Belt Ibaté - Taekwondo para todas as idades. Agende sua aula experimental gratuita! Mestre Rafael Nicolau com 27+ anos de experiência.">
+    <meta name="keywords" content="taekwondo, academia, Ibaté, artes marciais, aula experimental, Black Belt, kids, infantil, adulto">
+    <meta name="author" content="Academia Black Belt">
+    <meta property="og:title" content="Academia Black Belt - Ibaté | Taekwondo">
+    <meta property="og:description" content="Formando faixas pretas dentro e fora dos tatames. Agende sua aula experimental!">
+    <meta property="og:type" content="website">
+    <title>Academia Black Belt - Ibaté | Taekwondo</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo-dark.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="/assets/images/logo-dark.png" alt="Black Belt Logo">
+                <span>BLACK BELT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+            <a href="#agendar" class="nav-cta">Agendar Aula</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenu" aria-label="Fechar">✕</button>
+        <a href="#sobre" class="mobile-link">Sobre</a>
+        <a href="#horarios" class="mobile-link">Horários</a>
+        <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+        <a href="#localizacao" class="mobile-link">Localização</a>
+        <a href="#agendar" class="nav-cta">Agendar Aula Experimental</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <canvas class="hero-particles" id="particlesCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge reveal">
+                <span class="dot"></span>
+                <span>Ibaté - SP | Desde 2010</span>
+            </div>
+            <h1 class="reveal">
+                ACADEMIA<br><span class="highlight">BLACK BELT</span>
+            </h1>
+            <p class="reveal">Formando faixas pretas dentro e fora dos tatames, faixas pretas da vida, campeões de verdade.</p>
+            <div class="hero-buttons reveal">
+                <a href="#agendar" class="btn-primary">🥋 Agendar Aula Experimental</a>
+                <a href="#sobre" class="btn-secondary">Conheça a Academia</a>
+            </div>
+            <div class="hero-stats reveal">
+                <div class="hero-stat">
+                    <div class="number" data-count="15">0</div>
+                    <div class="label">Anos em Ibaté</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number" data-count="27">0</div>
+                    <div class="label">Anos de Experiência</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number" data-count="500">0</div>
+                    <div class="label">Alunos Formados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <img src="/assets/images/equipe.jpg" alt="Equipe Black Belt" loading="lazy">
+                    <div class="about-experience">
+                        <div class="number">27+</div>
+                        <div class="text">Anos de experiência</div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <span class="section-tag">Sobre nós</span>
+                    <h3>TRADIÇÃO E EXCELÊNCIA EM ARTES MARCIAIS</h3>
+                    <p>Instalada em Ibaté no ano de 2010, a Academia Black Belt foi idealizada pelo <strong>Mestre Rafael Nicolau</strong>, com mais de 27 anos de experiência dentro das artes marciais.</p>
+                    <p>Nosso objetivo e dedicação é na formação dentro do esporte, bem-estar físico e mental dos nossos alunos, baseado nos ensinamentos técnicos e filosóficos das artes marciais.</p>
+                    <div class="about-features">
+                        <div class="about-feature"><span class="icon">🥋</span><span>Taekwondo</span></div>
+                        <div class="about-feature"><span class="icon">👶</span><span>Kids (4-6 anos)</span></div>
+                        <div class="about-feature"><span class="icon">🧒</span><span>Infantil (7-11)</span></div>
+                        <div class="about-feature"><span class="icon">💪</span><span>Adulto (12+)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section style="padding: 40px 0 0;">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+                <img src="/assets/images/1.jpg" alt="Aluna Taekwondo" loading="lazy" style="width:100%;height:260px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);" class="reveal">
+                <img src="/assets/images/3.jpg" alt="Aluno Taekwondo" loading="lazy" style="width:100%;height:260px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);" class="reveal">
+                <img src="/assets/images/4.png" alt="Treino adulto" loading="lazy" style="width:100%;height:260px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);" class="reveal">
+                <img src="/assets/images/5.png" alt="Chute Taekwondo" loading="lazy" style="width:100%;height:260px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);" class="reveal">
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="horarios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Horários</span>
+                <h2 class="section-title reveal">HORÁRIOS DAS AULAS</h2>
+                <p class="section-subtitle reveal">Encontre o melhor horário para você ou seu filho</p>
+            </div>
+
+            <div class="schedule-tabs reveal">
+                <button class="schedule-tab active" data-tab="kids">👶 Kids (4-6 anos)</button>
+                <button class="schedule-tab" data-tab="infantil">🧒 Infantil (7-11 anos)</button>
+                <button class="schedule-tab" data-tab="adulto">💪 Adulto (12+)</button>
+            </div>
+
+            <div class="schedule-content active" id="tab-kids">
+                <div class="schedule-grid">
+                    <div class="schedule-card reveal"><div class="days">Segunda e Quarta</div><div class="time">18H30 - 19H20</div></div>
+                    <div class="schedule-card reveal"><div class="days">Terça e Quinta</div><div class="time">18H30 - 19H20</div></div>
+                </div>
+            </div>
+
+            <div class="schedule-content" id="tab-infantil">
+                <div class="schedule-grid">
+                    <div class="schedule-card reveal"><div class="days">Segunda e Quarta</div><div class="time">18H30 - 19H20</div></div>
+                    <div class="schedule-card reveal"><div class="days">Segunda e Quarta</div><div class="time">19H20 - 20H10</div></div>
+                    <div class="schedule-card reveal"><div class="days">Terça e Quinta</div><div class="time">17H00 - 17H50</div></div>
+                    <div class="schedule-card reveal"><div class="days">Terça e Quinta</div><div class="time">19H20 - 20H10</div></div>
+                </div>
+            </div>
+
+            <div class="schedule-content" id="tab-adulto">
+                <div class="schedule-grid">
+                    <div class="schedule-card reveal"><div class="days">Segunda e Quarta</div><div class="time">07H30 - 08H20</div></div>
+                    <div class="schedule-card reveal"><div class="days">Segunda e Quarta</div><div class="time">20H10 - 21H00</div></div>
+                    <div class="schedule-card reveal"><div class="days">Terça e Quinta</div><div class="time">20H10 - 21H00</div></div>
+                </div>
+            </div>
+
+            <div class="hours-info reveal">
+                <h3>🕐 HORÁRIO DE FUNCIONAMENTO</h3>
+                <div class="hours-grid">
+                    <div class="hour-item"><span class="day">Segunda-feira</span><span class="time">17:00 – 21:00</span></div>
+                    <div class="hour-item"><span class="day">Terça-feira</span><span class="time">17:00 – 21:00</span></div>
+                    <div class="hour-item"><span class="day">Quarta-feira</span><span class="time">17:00 – 21:00</span></div>
+                    <div class="hour-item"><span class="day">Quinta-feira</span><span class="time">17:00 – 21:00</span></div>
+                    <div class="hour-item"><span class="day">Sexta-feira</span><span class="time">18:00 – 21:00</span></div>
+                    <div class="hour-item"><span class="day">Sábado</span><span class="time closed">Fechado</span></div>
+                    <div class="hour-item"><span class="day">Domingo</span><span class="time closed">Fechado</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Depoimentos</span>
+                <h2 class="section-title reveal">O QUE NOSSOS ALUNOS DIZEM</h2>
+            </div>
+
+            <div class="testimonials-slider reveal">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <span class="testimonial-quote">"</span>
+                            <p class="testimonial-text">Academia Maravilhosa... Estou tendo resultados positivos depois que coloquei minha filha na Luta... Principalmente na Disciplina... Sem contar com o atendimento maravilhoso... Pessoal atencioso, não só com os alunos mas também com os Pais.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">E</div>
+                                <div>
+                                    <div class="testimonial-name">Evelin Caroline de Oliveira</div>
+                                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <span class="testimonial-quote">"</span>
+                            <p class="testimonial-text">Essa academia é maravilhosa, excelência em atendimento, e muito familiar, nossa família tem muita satisfação em fazer parte ♥️✨</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">E</div>
+                                <div>
+                                    <div class="testimonial-name">Elaine Vendrasco</div>
+                                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <span class="testimonial-quote">"</span>
+                            <p class="testimonial-text">Meu filho tem TDAH, e estava extremamente irritado e difícil de se lidar após o início do medicamento. Achei que a escola não fosse aceitar ele, mas ao invés disso me mostraram o quão inclusivos e empáticos são, não desistiram dele e foram adaptando tudo até ele acostumar com as regras e rotinas. Melhor escola em todos os sentidos!</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">P</div>
+                                <div>
+                                    <div class="testimonial-name">Petria Taina</div>
+                                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-dot active" data-slide="0"></button>
+                    <button class="slider-dot" data-slide="1"></button>
+                    <button class="slider-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="booking-section" id="agendar">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Agendar</span>
+                <h2 class="section-title reveal">AGENDE SUA AULA EXPERIMENTAL</h2>
+                <p class="section-subtitle reveal">Preencha o formulário abaixo e venha conhecer a academia!</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <form class="booking-form reveal" id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required minlength="3" maxlength="100">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(16) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student_age">Idade do Aluno *</label>
+                            <input type="number" id="student_age" name="student_age" placeholder="Ex: 8" min="3" max="99" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Categoria *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Selecione...</option>
+                                <option value="kids">Kids (4-6 anos)</option>
+                                <option value="infantil">Infantil (7-11 anos)</option>
+                                <option value="adulto">Adulto (12+ anos)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred_schedule">Horário Preferido *</label>
+                            <select id="preferred_schedule" name="preferred_schedule" required>
+                                <option value="">Selecione a categoria primeiro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred_date">Data Preferida *</label>
+                        <input type="date" id="preferred_date" name="preferred_date" required>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">🥋 Agendar Aula Experimental</button>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="check">✅</div>
+                    <h3>AGENDAMENTO REALIZADO!</h3>
+                    <p>Sua aula experimental foi agendada com sucesso. Estamos ansiosos para recebê-lo!</p>
+                    <p style="margin-top:12px; font-size:0.85rem;">Caso precise <strong>alterar a data</strong> ou <strong>não consiga comparecer</strong>, por favor avise pelo WhatsApp:</p>
+                    <a href="https://wa.me/5516997048080" target="_blank" class="whatsapp-link" id="whatsappNotify">📱 Avisar pelo WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="localizacao">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">Localização</span>
+                <h2 class="section-title reveal">COMO CHEGAR</h2>
+            </div>
+
+            <div class="location-grid">
+                <div class="map-container reveal-left">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.5!2d-47.9989!3d-21.9558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8b0a3c0c7d7c3%3A0x6f8c8d8b8b8b8b8b!2sR.%20Tot%C3%B3%20Pessente%2C%20265%20-%20Centro%2C%20Ibat%C3%A9%20-%20SP%2C%2014815-000!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-info reveal-right">
+                    <div class="contact-card">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>R. Totó Pessente, N° 265 - Centro<br>Ibaté - SP, 14815-000</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">📱</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5516997048080" target="_blank">(16) 99704-8080</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">🕐</div>
+                        <div>
+                            <h4>Funcionamento</h4>
+                            <p>Seg a Qui: 17h - 21h<br>Sexta: 18h - 21h</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">🏢</div>
+                        <div>
+                            <h4>Mestre</h4>
+                            <p>Rafael Nicolau<br>27+ anos de experiência</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">Siga-nos nas redes sociais</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/blackbeltibate/" target="_blank" class="social-link" aria-label="Instagram">📸</a>
+                            <a href="https://www.facebook.com/academiablackbelt" target="_blank" class="social-link" aria-label="Facebook">👍</a>
+                            <a href="https://wa.me/5516997048080" target="_blank" class="social-link" aria-label="WhatsApp">💬</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/assets/images/logo-dark.png" alt="Black Belt">
+                    <span>BLACK BELT IBATÉ</span>
+                </div>
+                <p class="footer-text">© 2024 Academia Black Belt - Ibaté. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/schedule.js"></script>
+</body>
+</html>
