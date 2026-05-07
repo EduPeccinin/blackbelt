@@ -25,6 +25,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '1mb' }));
 
 // ========= SESSION =========
+app.set('trust proxy', 1); // Trust first proxy (Vercel) to allow secure cookies
 const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(64).toString('hex');
 const pgSession = require('connect-pg-simple')(session);
 const { Pool } = require('pg');
